@@ -2,6 +2,7 @@
     .info-wrapper{
         grid-template-areas: 
         'col1 col2';
+        padding: 0rem 2rem;
     }
     .info-wrapper .col2 img{
         max-width: 36rem;
@@ -61,5 +62,11 @@
     }
     .footer .social-links img{
         margin: 1rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    html{
+        font-size: 71.5%;
     }
 }
