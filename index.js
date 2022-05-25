@@ -7,31 +7,43 @@ const shortlinkContainer = document.querySelector('.short-link-container');
 menu.addEventListener('click',()=>{
     navBar.classList.add('nav-active')
 });
-shortenBtn.addEventListener('click',()=>{
-  console.log(' i m clicked')
-    shortenlink(inputLink.value).then(data=>{
-        console.log(data.result.short_link)
-      
-        const output = 
-        `
-        <div class="link-container">
-        <div class="original-link">
-          ${inputLink.value}
-        </div>
-        <div class="short-link">
-          <div class="last-col">
-            ${data.result.short_link}
-          </div>
-          <div class="copy-btn">
-            <button class="copy">copy</button>
-          </div>
-          </div>
 
-        </div>
-        `
-        shortlinkContainer.innerHTML += output;
-        inputLink.value=''
-    });
+// shortenBtn event listener
+shortenBtn.addEventListener('click',()=>{
+    if(localStorage.getItem('shortlink') === null){
+        shortlinkArray = [];
+    }else{
+        shortlinkArray = JSON.parse(localStorage.getItem('shortlink'));
+    }
+    shortenlink(inputLink.value).then(data=>{
+        // set value in local storage
+        shortlinkArray.push(data.result.short_link);
+        localStorage.setItem(`${inputLink.value}`,JSON.stringify(shortlinkArray));
+        let result ='';
+        // iterate on local Storage keys and values
+        for(let i=0;i<localStorage.length;i++){
+          const output = 
+          `
+          <div class="link-container">
+          <div class="original-link">
+              ${localStorage.key(i)}
+              </div>
+            <div class="short-link">
+              <div class="last-col">
+              ${localStorage.getItem(localStorage.key(i))}
+              </div>
+              <div class="copy-btn">
+              <button class="copy">copy</button>
+              </div>
+              </div>
+              
+              </div>
+              `;
+              result+=output;
+        }
+        shortlinkContainer.innerHTML = result;
+        inputLink.value='';
+      });
 });
 const shortenlink= async(value)=>{
     const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${inputLink.value}`);
