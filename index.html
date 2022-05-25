@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./responsive.css">
+  <link rel="stylesheet" href="./index.js">
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 </head>
 <body>
@@ -29,7 +30,6 @@
         <!-- nav-bar end -->
         <div class="menu">
           <h3>menu</h3>
-          <!-- <img src="./images/icon-detailed-records.svg" alt="menu"> -->
         </div>
     </div>
     <!-- header end -->
@@ -54,40 +54,14 @@
         <img src="./images/bg-shorten-mobile.svg" alt="">
       </div>
       <div class="col1">
-        <input type="url" placeholder="Shorten a link here...">
+        <input id="input-link" type="text" placeholder="Shorten a link here...">
       </div>
         <div><button class="shorten-btn">Shorten it!</button></div>
     </div>
     
     <!-- shortner-wrapper end -->
     <div class="short-link-container">
-      <div class="link-container">
-        <div class="original-link">
-          https://www.front-endmentor.io
-        </div>
-        <div class="short-link">
-          <div class="last-col">
-            https://fronto.wwkin
-          </div>
-          <div class="copy-btn">
-            <button class="copy">copy</button>
-          </div>
-          </div>
 
-      </div>
-      <div class="link-container">
-        <div class="original-link">
-          https://www.front-endmentor.io
-        </div>
-        <div class="short-link">
-          <div class="last-col">
-            https://fronto.wwkin
-          </div>
-          <div class="copy-btn">
-            <button class="copy">copy</button>
-          </div>
-          </div>
-      </div>
    </div>
     <!-- short-link-conatiner end-->
     <div class="advance-wrapper">
@@ -177,6 +151,7 @@
     <!-- footer-end -->
   </div>
  
+  <script src="./index.js"></script>
 </body>
 </html>
 

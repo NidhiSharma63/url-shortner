@@ -52,7 +52,8 @@ body{
     border-radius: .8rem;
     position: absolute;
     top: 5rem;
-    left: 40%;
+    left: 25%;
+    right: 25%;
     display: none;
 }
 .nav-bar ul{
@@ -148,7 +149,6 @@ ul li{
     padding: 2rem;
     border-radius: 0.7rem;
     position: relative;
-    z-index: -2;
     width: 89%;
     margin: auto;
     margin-top: 5rem;
@@ -412,3 +412,7 @@ ul li{
     justify-content: space-around;
 }
 
+.nav-active{
+    display: block;
+    transition: .2s;
+}
