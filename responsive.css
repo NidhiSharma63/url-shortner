@@ -1,0 +1,65 @@
+@media screen and (min-width:700px) {
+    .info-wrapper{
+        grid-template-areas: 
+        'col1 col2';
+    }
+    .info-wrapper .col2 img{
+        max-width: 36rem;
+    }
+    .info-wrapper .col1 p{
+        font-size: 1.2rem;
+    }
+    /* info-end */
+    .shortner-wrapper{
+        height: 6rem;
+        grid-template-areas: 
+        'col1 col2';
+        align-items: center;
+        place-content: space-between;
+    }
+    .shortner-wrapper .col1{
+        width: 48rem;
+        /* width: 200%; */
+    }
+    .shortner-wrapper button{
+        margin-top: 0rem;
+        /* width: 13rem; */
+        width: 100%;
+        padding: 1rem 1rem;
+        font-size: 2rem;
+    }
+    /* shortner-end */
+    .advance-wrapper {
+        gap: 0rem;
+    }
+    .advance-wrapper .col2{
+        flex-direction: row;
+    }
+   
+    .advance-wrapper .col2 .card-1,
+    .advance-wrapper .col2 .card-2,
+    .advance-wrapper .col2 .card-3{
+        margin: 1rem;
+    }
+    .advance-wrapper .col2 .card-2{
+        margin-top: 7rem;
+    }
+    .advance-wrapper .col2 .card-3{
+        margin-top: 14rem;
+    }
+    .advance-wrapper .col2 .card-2 .icons::before,
+    .advance-wrapper .col2 .card-3 .icons::before{
+        top: 7.2rem;
+        left: -13rem;
+        transform: rotate(90deg);
+    }
+    /* .advance-wrapper end */
+    .footer{
+        grid-template-areas:
+        'logo features resources company social-icons'
+        ;
+    }
+    .footer .social-links img{
+        margin: 1rem;
+    }
+}

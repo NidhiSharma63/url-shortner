@@ -32,11 +32,8 @@ body{
     'advance-wrapper'
     'boost-wrapper'
     'footer';
-    gap: 5rem;
     max-width: 1300px;
-    border: 1px solid;
     margin: auto;
-    padding: 0rem 1rem;
 }
 /* header section */
 .header{
@@ -97,6 +94,7 @@ ul li{
     grid-template-areas: 
     'col2'
     'col1';
+    margin-top: 2rem;
 }
 .info-wrapper .col1{
     grid-area: col1;
@@ -150,11 +148,19 @@ ul li{
     border-radius: 0.7rem;
     position: relative;
     z-index: -2;
+    width: 89%;
+    margin: auto;
+    margin-top: 5rem;
 }
 .shortner-wrapper .bg-image{
     position: absolute;
     right: 0;
     z-index: -1;
+    height: 100%;
+}
+.shortner-wrapper .bg-image img{
+    height: 100%;
+    border-radius: .7rem;
 }
 .shortner-wrapper .col1{
     height: 4rem;
@@ -186,11 +192,177 @@ ul li{
 /* shortner-wrapper end */
 .advance-wrapper{
     grid-area: advance-wrapper;
-    background-color:var(--Gray);
+    display: grid;
+    grid-template-areas: 
+    'col1'
+    'col2';
+    gap: 8rem;
+    width: 100%;
+    background-color: rgba(65, 35, 134, 0.053);;
 }
+.advance-wrapper .col1{
+    grid-area: col1;
+    padding-top: 8rem;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.advance-wrapper .col1 h2{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: var(--Very-Dark-Blue);
+}
+.advance-wrapper .col1 p{
+    color: var(--Gray);
+    font-size: 1.2rem;
+}
+.advance-wrapper .col2{
+    grid-area: col2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+}
+.advance-wrapper .col2 .card-2{
+    margin-top: 8rem;
+}
+.advance-wrapper .col2 .card-3{
+    margin-top: 8rem;
+}
+.advance-wrapper .col2 .card-1,
+.advance-wrapper .col2 .card-2,
+.advance-wrapper .col2 .card-3{
+    width: 60%;
+    background: white;
+    border-radius: 0.3rem;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+.advance-wrapper .col2 .card-1 .icons,
+.advance-wrapper .col2 .card-2 .icons,
+.advance-wrapper .col2 .card-3 .icons{
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--Dark-Violet);
+    position: relative;
+    top: -4rem;
+    left: 35%;
+}
+.advance-wrapper .col2 .card-1 .title,
+.advance-wrapper .col2 .card-2 .title,
+.advance-wrapper .col2 .card-3 .title{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 0.8rem;
+    color: var(--Very-Dark-Blue);
+}
+.advance-wrapper .col2 .card-1 .description,
+.advance-wrapper .col2 .card-2 .description,
+.advance-wrapper .col2 .card-3 .description{
+    font-size: 1.3rem;
+    color: var(--Gray);
+}
+
+.advance-wrapper .col2 .card-2 .icons::before,
+.advance-wrapper .col2 .card-3 .icons::before{
+    content: '';
+    position: relative;
+    width: 0rem;
+    height: 10rem;
+    border: 2px solid var(--Cyan);
+    top: -53px;
+    z-index: -1;
+    left: 2rem;
+}
+/* .advance-wrapper end */
 .boost-wrapper{
     grid-area: boost-wrapper;
+    background-color: var(--Dark-Violet);
+    position: relative;
+    height: 22rem;
+    z-index: -2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+.boost-wrapper .boost-bg-wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.boost-wrapper .boost-bg-wrapper img{
+    height: 100%;
+    width: 95%;
+    border-radius: .7rem;
+}
+.boost-wrapper  p{
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+.boost-wrapper .get-started{
+    font-weight: 700;
+    margin-top: 2rem;
+    padding: 1rem 2.3rem;
+    border-radius: 1.8rem;
+    font-size: 2.2rem;
+    color: white;
+    background: var(--Cyan);
+    border: none;
+    cursor: pointer;
+}
+/* boost section end */
 .footer{
     grid-area: footer;
+    display: grid;
+    grid-template-areas:
+    'logo'
+    'features'
+    'resources'
+    'company'
+    'social-icons'
+    ;
+    background-color: var(--Very-Dark-Blue);
+    text-align: center;
+    padding: 2rem 0rem;
+    color: white;
 }
+.footer .logo{
+    grid-area: logo;
+}
+.footer .features{
+    grid-area: features;
+}
+.footer .resources{
+    grid-area: resources;
+} 
+.footer .company{
+    grid-area: company;
+}
+.footer .social-links{
+    grid-area:social-icons;
+}
+.footer  .title{
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.footer  .row{
+    padding: .5rem;
+}
+.footer .social-links{
+    padding: 3rem 0rem;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
