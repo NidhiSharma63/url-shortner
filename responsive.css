@@ -67,6 +67,26 @@
 
 @media screen and (min-width:900px) {
     html{
-        font-size: 71.5%;
+        font-size: 76.5%;
+    }
+    .info-wrapper .col1{
+        padding: 0rem 7rem;
+        align-items: flex-start;
+    }
+    .info-wrapper .col1 p,
+    .info-wrapper .col1 h1{
+        text-align: start;
+    }
+    .shortner-wrapper button{
+        margin-top: 0rem;
+        /* width: 13rem; */
+        width: 100%;
+        padding: 1rem 1rem;
+        font-size: 1.6rem;
+    }
+}
+@media screen and (min-width:1200px) {
+    html{
+        font-size: 85.5%;
     }
 }
