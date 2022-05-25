@@ -30,6 +30,15 @@
         font-size: 2rem;
     }
     /* shortner-end */
+
+    .short-link-container .link-container{
+        width: 100%;
+        flex-direction: row;
+    }
+    .short-link-container .link-container .original-link{
+        border-bottom: none;
+    }
+    /* shrot-link-container end */
     .advance-wrapper {
         gap: 0rem;
     }
@@ -69,8 +78,50 @@
     html{
         font-size: 76.5%;
     }
+
+    .nav-bar{
+        display: flex;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        padding: 0rem;
+        background-color: transparent;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        margin-right: 12rem;
+    }
+    ul li{
+        padding: 0rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        color: var(--Gray);
+    }
+    .nav-bar .button-wrapper{
+        flex-direction: row;
+        padding: 0rem;
+    }
+    .button-wrapper .login{
+        color: var(--Gray);
+    }
+    .button-wrapper .login,
+    .button-wrapper .signup{
+        padding:0rem;
+        margin-bottom: 0rem;
+
+    }
+    .button-wrapper .signup{
+        margin-left: 3rem;
+        padding: 1rem;
+    }
+    .menu{
+        display: none;
+    }
+    /* header end */
     .info-wrapper .col1{
-        padding: 0rem 7rem;
+        padding: 0rem 5.5rem;
         align-items: flex-start;
     }
     .info-wrapper .col1 p,
@@ -88,5 +139,9 @@
 @media screen and (min-width:1200px) {
     html{
         font-size: 85.5%;
+    }
+    .info-wrapper .col1{
+        padding: 0rem 9rem;
+        align-items: flex-start;
     }
 }
