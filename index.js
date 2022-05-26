@@ -61,10 +61,12 @@ let showShortlink = ()=>{
   const copyBtn = document.querySelectorAll('.copy');
   copyBtn.forEach(btn=>{
     btn.addEventListener('click',(e)=>{
+      console.log('i m cliked')
       let input = document.createElement('input');
-      input.value = e.target.parentElement.previousElementSibling.textContent;
-      input.select()
-      document.execCommand('copy');
+      var val = input.value = e.target.parentElement.previousElementSibling.textContent;
+      // input.select()
+      navigator.clipboard.writeText(val)
+      // document.execCommand('copy');
     });
   });
 }
