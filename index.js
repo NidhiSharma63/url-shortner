@@ -5,8 +5,15 @@ const inputLink = document.querySelector('#input-link');
 const shortlinkContainer = document.querySelector('.short-link-container');
 
 menu.addEventListener('click',()=>{
-    navBar.classList.add('nav-active')
+    navBar.classList.toggle('nav-active')
 });
+
+// Api call to short link
+const shortenlink= async(value)=>{
+  const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${inputLink.value}`);
+  const res = await data.json();
+  return res;
+};
 
 // shortenBtn event listener
 shortenBtn.addEventListener('click',()=>{
@@ -21,14 +28,10 @@ shortenBtn.addEventListener('click',()=>{
         localStorage.setItem(`${inputLink.value}`,JSON.stringify(shortlinkArray));
         showShortlink();
         inputLink.value='';
-      });
-});
-const shortenlink= async(value)=>{
-    const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${inputLink.value}`);
-    const res = await data.json();
-    return res;
-};
+    });
+  });
 
+// show shortlink
 let showShortlink = ()=>{
   let result ='';
   // iterate on local Storage keys and values
@@ -41,7 +44,7 @@ let showShortlink = ()=>{
         </div>
       <div class="short-link">
         <div class="last-col">
-        ${localStorage.getItem(localStorage.key(i))}
+        ${JSON.parse(localStorage.getItem(localStorage.key(i)))[0]}
         </div>
         <div class="copy-btn">
         <button class="copy">copy</button>
@@ -53,8 +56,19 @@ let showShortlink = ()=>{
         result+=output;
   }
   shortlinkContainer.innerHTML = result;
+
+  // copy to clipboard
+  const copyBtn = document.querySelectorAll('.copy');
+  copyBtn.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+      let input = document.createElement('input');
+      input.value = e.target.parentElement.previousElementSibling.textContent;
+      input.select()
+      document.execCommand('copy');
+    });
+  });
 }
 
 window.onload=()=>{
   showShortlink()
-}
+};
